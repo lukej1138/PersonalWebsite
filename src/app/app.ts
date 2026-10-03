@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+import { Career } from './career/career';
 import { Contact } from './contact/contact';
 import { Hero } from './hero/hero';
 import { Navbar } from './navbar/navbar';
@@ -9,7 +10,7 @@ import { Socials } from './socials/socials';
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [Navbar, Hero, Contact, Projects, Synopsis, Socials]
+  imports: [Navbar, Hero, Career, Contact, Projects, Synopsis, Socials]
 })
 export class App {
   protected readonly title = signal('LJWeb2.0');

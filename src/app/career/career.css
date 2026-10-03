@@ -1,0 +1,320 @@
+/* Layout: Destiny-roadmap-style horizontal timeline (line grows left -> right) on desktop;
+   collapses to a vertical left-rail timeline on mobile. Every node centers its icon above its
+   label within a fixed-width slot, so each node's center is fixed and predictable regardless
+   of its text width — that's what lets the line start exactly on the first node, and lets the
+   middle node land dead-center on the page when its neighboring slots are equal width. */
+
+.track-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.track {
+  position: relative;
+  display: flex;
+  gap: 7rem;
+  padding-top: 2.5rem;
+}
+
+/* Starts exactly at the first node's icon center (half a node-col's width in), not the
+   track's own edge, so nothing trails off to the left of the first point. */
+.track::before {
+  content: '';
+  position: absolute;
+  top: calc(2.5rem + 38px);
+  left: 7.5rem;
+  width: calc(100% - 7.5rem);
+  height: 2px;
+  transform-origin: left center;
+  background: linear-gradient(
+    to right,
+    rgba(96, 165, 250, 0.65) 0%,
+    rgba(96, 165, 250, 0.65) 58%,
+    transparent 82%
+  );
+}
+
+/* Same width as a node-col, so node + gap is mirrored by gap + journey on the far side —
+   centering the track also centers whichever node sits between them. */
+.journey {
+  width: 15rem;
+  padding-top: calc(2.5rem + 38px - 0.65em);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: oklch(0.93 0.005 285 / 72%);
+  letter-spacing: 0.01em;
+}
+
+.node-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15rem;
+}
+
+.node-btn {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.node-circle {
+  position: relative;
+  width: 4.75rem;
+  height: 4.75rem;
+  border-radius: 9999px;
+  background: var(--color-card);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s ease-in-out;
+  flex-shrink: 0;
+}
+
+.node-btn:hover .node-circle,
+.node-btn[aria-expanded='true'] .node-circle {
+  border-color: rgba(96, 165, 250, 0.65);
+  box-shadow: 0 0 24px rgba(96, 165, 250, 0.28);
+}
+
+.node-btn:active .node-circle {
+  transform: scale(0.96);
+}
+
+.node-logo {
+  width: 1.9rem;
+  height: 1.9rem;
+  color: #60a5fa;
+}
+
+.node-logo-img {
+  object-fit: contain;
+}
+
+.monogram {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #60a5fa;
+}
+
+.ping {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1rem;
+  height: 1rem;
+}
+.ping .dot {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #4ade80;
+  border: 2px solid var(--color-good-black);
+}
+.ping .wave {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #4ade80;
+  animation: ping-wave 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes ping-wave {
+  0% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+  75%,
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ping .wave {
+    animation: none;
+    opacity: 0.35;
+  }
+}
+
+.node-text {
+  text-align: center;
+}
+.node-company {
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--color-main-text);
+}
+.node-role {
+  font-size: 0.875rem;
+  color: oklch(0.93 0.005 285 / 72%);
+}
+.node-btn:hover .node-company {
+  color: #93c5fd;
+}
+
+.live-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.3rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4ade80;
+}
+
+/* Expanding detail panel (grid-row trick for smooth height on unknown content length). */
+.detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.3s ease, opacity 0.25s ease, margin-top 0.3s ease;
+  margin-top: 0;
+  width: 18rem;
+  max-width: 80vw;
+}
+.detail.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 1.1rem;
+}
+.detail > .detail-inner {
+  overflow: hidden;
+}
+
+.detail-card {
+  background: var(--color-card);
+  border: 1px solid rgba(96, 165, 250, 0.22);
+  border-left: 2px solid rgba(96, 165, 250, 0.65);
+  border-radius: 0.9rem;
+  padding: 1rem 1.15rem;
+}
+.detail-dates {
+  font-size: 0.75rem;
+  color: #60a5fa;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.detail-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.detail-card li {
+  font-size: 0.85rem;
+  color: oklch(0.93 0.005 285 / 72%);
+}
+
+
+/* ---------- Mobile: vertical rail ---------- */
+@media (max-width: 1000px) {
+  .track-wrap {
+    justify-content: center;
+  }
+  .track {
+    flex-direction: column;
+    width: 15rem;
+    gap: 2.75rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+  }
+  .track::before {
+    top: 3.0rem;
+    left: calc(2.375rem - 1px);
+    width: 2px;
+    height: calc(100% + 0.5rem);
+    max-width: none;
+    transform-origin: top center;
+    background: linear-gradient(
+      to bottom,
+      rgba(96, 165, 250, 0.65) 0%,
+      rgba(96, 165, 250, 0.65) 78%,
+      transparent 100%
+    );
+  }
+  .node-col {
+    width: 100%;
+    align-items: flex-start;
+  }
+  .node-text {
+    text-align: left;
+  }
+  .node-btn {
+    flex-direction: row;
+    align-items: center;
+  }
+  .detail {
+    width: 100%;
+    max-width: none;
+    margin-left: calc(4.75rem + 0.9rem);
+  }
+  .detail.open {
+    margin-top: 0.8rem;
+  }
+  .journey {
+    width: auto;
+    padding-top: 0;
+    margin-top: 0.5rem;
+    margin-left: calc(4.75rem + 0.9rem);
+  }
+}
+
+@media (max-width: 540px) {
+  .track-wrap {
+    justify-content: flex-start;
+  }
+}
+/* ---------- Scroll-triggered intro: line draws in, then nodes bloom in along it ----------
+   .career-pending is only ever applied by the component when prefers-reduced-motion allows
+   it and IntersectionObserver exists; otherwise these rules never match, and the section
+   just renders in its final, fully visible state. */
+.career-pending .track::before {
+  transform: scaleX(0);
+}
+.career-pending .node-col {
+  opacity: 0;
+  transform: translateY(10px) scale(0.82);
+}
+.career-pending .journey {
+  opacity: 0;
+}
+
+.track::before {
+  transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.node-col {
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.journey {
+  transition: opacity 0.5s ease;
+}
+
+.career-in .track::before {
+  transform: none;
+}
+.career-in .node-col {
+  opacity: 1;
+  transform: none;
+}
+/* Stagger so each node "pops" roughly when the drawing line reaches it. */
+.career-in .node-col {
+  transition-delay: calc(var(--i, 0) * 0.3s + 0.05s);
+}
+
+.career-in .journey {
+  opacity: 1;
+  transition-delay: 0.85s;
+}
+
+@media (max-width: 1000px) {
+  .career-pending .track::before {
+    transform: scaleY(0);
+  }
+}

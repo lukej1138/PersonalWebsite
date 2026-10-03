@@ -9,12 +9,12 @@
       </div>
     </div>
     <div class="h-5 w-fit place-self-center">
-      @for (item of orbitData.getData(); track item.id; let i = $index) {
+      @for (item of orbitData; track item.id; let i = $index) {
         <div (mouseenter)="togglePause()" (mouseleave)="togglePause()"
         [class.paused] = "pauseLoop()"
         class="orbitPath animate-spin-around"
         [style.animation-duration] = "spinDur() + 's'"
-        [style.animation-delay]="'-' + (( spinDur() / orbitData.getData().length) * (i+1)) + 's'">
+        [style.animation-delay]="'-' + (( spinDur() / orbitData.length) * (i+1)) + 's'">
         <a (click) = "filtersConn.adjustFilters(item.name, false)" [href]="'#projects'"><img class="w-12 h-12 rounded-sm" [src]="item.imgUrl"></a>
         </div>
       }

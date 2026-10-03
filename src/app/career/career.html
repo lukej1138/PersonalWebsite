@@ -1,0 +1,63 @@
+<div
+  id="career"
+  #career
+  class="bg-good-black pt-25 pb-15 px-5 overflow-hidden"
+  [class.career-pending]="pending()"
+  [class.career-in]="revealed()"
+>
+  <header class="flex flex-col items-center justify-center pb-8 text-5xl md:text-6xl">
+    <div class="flex">
+      <span class="font-light text-white">my</span>
+      <span class="font-bold text-blue-400">Career</span>
+    </div>
+    <div class="mt-3 h-1 w-screen sm:w-85 md:w-100 rounded-full bg-blue-400"></div>
+  </header>
+
+  <div class="track-wrap">
+    <div class="track">
+      @for (entry of entries; track entry.id) {
+        <div class="node-col" [style.--i]="$index">
+          <button
+            class="node-btn"
+            [attr.aria-expanded]="openId() === entry.id"
+            (click)="toggle(entry.id)"
+          >
+            <span class="node-circle">
+              @if (entry.current) {
+                <span class="ping"><span class="wave"></span><span class="dot"></span></span>
+              }
+              @if (entry.logoIcon) {
+                <ng-icon [name]="entry.logoIcon" size="1.9rem" class="node-logo"></ng-icon>
+              } @else if (entry.logoSrc) {
+                <img [src]="entry.logoSrc" [alt]="entry.company + ' logo'" class="node-logo node-logo-img" />
+              } @else {
+                <span class="monogram">{{ entry.company.charAt(0) }}</span>
+              }
+            </span>
+            <span class="node-text">
+              <div class="node-company">{{ entry.company }}</div>
+              <div class="node-role">{{ entry.role }}</div>
+              @if (entry.current) {
+                <div class="live-tag"><span>●</span> Currently here</div>
+              }
+            </span>
+          </button>
+          <div class="detail" [class.open]="openId() === entry.id">
+            <div class="detail-inner">
+              <div class="detail-card">
+                <div class="detail-dates">{{ entry.dates }}</div>
+                <ul>
+                  @for (bullet of entry.bullets; track $index) {
+                    <li>{{ bullet }}</li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+
+      <p class="journey">the journey continues&hellip;</p>
+    </div>
+  </div>
+</div>

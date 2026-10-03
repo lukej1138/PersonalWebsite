@@ -15,7 +15,7 @@ export class Hero {
   flashCursor = signal(false);
   typeWriterPrintableVals: string[] = ["Software Engineer", "CS + AI @ NEU", "Lossless Audio Enjoyer", "Try Clicking an Icon!"];
   typeWriterEffect = this.getTypewriterEffect(this.typeWriterPrintableVals);
-  orbitData = inject(Technologies);
+  orbitData = inject(Technologies).getData();
   spinDur = signal(60);
 
 

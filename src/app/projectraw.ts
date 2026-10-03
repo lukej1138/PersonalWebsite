@@ -7,7 +7,7 @@ export class ProjectRaw {
     {
       id: 1,
       title: "SearchNEU.com",
-      projectImgURL: "/searchTest.png",
+      projectImgURL: "/optimized/searchTest.png",
       popUp: {
         timeFrame: "Sept. 2025 – Present",
         description: "A full-scale university course catalog serving thousands of Northeastern students. The platform scrapes real-time course data, powers a fast trigram-based search, and delivers individualized notifications to hundreds of user profiles.",
@@ -19,14 +19,14 @@ export class ProjectRaw {
           "Includes real-time updater for course information, which runs concurrent course scrapes every 5 minutes"
         ],
         tags: ["React.js", "TypeScript", "PostgreSQL", "Vercel", "Node.js", "Docker", "Next.js", "HTML", "Tailwind CSS", "Git", "VsCode", "Drizzle ORM", "Neon"],
-        popupImgURL: "/img1.1.png"
+        popupImgURL: "/optimized/img1.1.png"
       },
       priority: 100,
     },
     {
       id: 2,
       title: "Personal AI Assistant",
-      projectImgURL: "/img2.png",
+      projectImgURL: "/optimized/img2.png",
       popUp: {
         timeFrame: "Mar. 2025 – Present",
         description: "An AI-powered personal assistant featuring real-time speech processing, LLM-based task categorization, and secure OAuth 2.0 integrations with cloud services like Google Calendar and Spotify.",
@@ -38,14 +38,14 @@ export class ProjectRaw {
           "Engineered a secure OAuth 2.0 authentication flow for cloud service integrations like Google Calendar and Spotify"
         ],
         tags: ["Python", "Docker", "Flask", "VsCode", "macOS"],
-        popupImgURL: "/img2.1.png"
+        popupImgURL: "/optimized/img2.1.png"
       },
       priority: 99
     },
     {
       id: 3,
       title: "Hanabi Deep-Q RL Model",
-      projectImgURL: "/img3.png",
+      projectImgURL: "/optimized/img3.png",
       popUp: {
         timeFrame: "Jan. – May 2026",
         description: "A reinforcement learning agent trained to play Hanabi, a cooperative 4-person card game. The model leverages Deep-Q Learning with techniques like epsilon-greedy exploration, double DQN, and action masking to learn hint-based strategy.",
@@ -56,14 +56,14 @@ export class ProjectRaw {
           "Presented findings in a presentation, detailing our tuning of both the DQNs as well as hyperparameters such as learning rate, memory capacity, and discount factor over the course of 6 months"
         ],
         tags: ["Python", "PyTorch", "Pandas", "VsCode"],
-        popupImgURL: "/img3.1.png"
+        popupImgURL: "/optimized/img3.1.png"
       },
       priority: 70,
     },
     {
       id: 4,
       title: "Data Pipeline & Analytics Platform",
-      projectImgURL: "/img4.png",
+      projectImgURL: "/optimized/img4.png",
       popUp: {
         timeFrame: "May 2026",
         description: "An end-to-end data pipeline that ingests multi-currency expense transactions from CSV into a normalized SQLite database and a cloud-hosted MySQL analytical data warehouse, featuring a star-schema data mart and MongoDB document-based storage.",
@@ -74,14 +74,14 @@ export class ProjectRaw {
           "Integrated MongoDB for flexible expense report storage supporting multi-project billing allocation across clients and currencies"
         ],
         tags: ["R Language", "VsCode"],
-        popupImgURL: "/img4.1.png"
+        popupImgURL: "/optimized/img4.1.png"
       },
       priority: 50,
     },
     {
       id: 5,
       title: "Sanguine Card Game",
-      projectImgURL: "/img5.png",
+      projectImgURL: "/optimized/img5.png",
       popUp: {
         timeFrame: "Nov. 2025 – Dec. 2025",
         description: "A real-time multiplayer digital card game built with a Java Swing GUI and modular MVC architecture. The project features a comprehensive automated test suite and was developed through collaborative code review sessions.",
@@ -93,14 +93,14 @@ export class ProjectRaw {
           "Held debugging and code review sessions with team-members before adding new features to deployment"
         ],
         tags: ["Java", "JUnit", "Swing", "Git", "IntelliJ"],
-        popupImgURL: "/img5.1.png"
+        popupImgURL: "/optimized/img5.1.png"
       },
       priority: 30,
     },
     {
       id: 6,
       title: "LeetCode Ping Platform",
-      projectImgURL: "/img6.png",
+      projectImgURL: "/optimized/img6.png",
       popUp: {
         timeFrame: "August 2025",
         description: "A Raspberry Pi program that sends a phone notification whenever the new LeetCode daily challenge is released, with automatic time zone adjustment. Built on an Ubuntu Linux distribution using the LeetCode API and the Ntfy push service.",
@@ -111,14 +111,14 @@ export class ProjectRaw {
           "Used the 'requests' Python library to both query the LeetCode API and POST to the app on my phone, Ntfy"
         ],
         tags: ["Python", "Linux", "VsCode"],
-        popupImgURL: "/img6.png"
+        popupImgURL: "/optimized/img6.png"
       },
       priority: 80
     },
     {
       id: 7,
       title: "Convention Center Event Manager",
-      projectImgURL: "/img7.png",
+      projectImgURL: "/optimized/img7.png",
       popUp: {
         timeFrame: "June 2025",
         description: "A user-friendly, object-oriented program for managing convention center events and reservations. It implements complex business logic with state persistence, input validation, and role-based workflows, backed by comprehensive UML documentation.",
@@ -129,14 +129,14 @@ export class ProjectRaw {
           "Produced comprehensive technical documentation, including UML class diagrams, sequence diagrams, and CRC cards, to model system architecture and object interactions for easier debugging and future onboarding"
         ],
         tags: ["C++ Language", "VsCode"],
-        popupImgURL: "/img7.1.png"
+        popupImgURL: "/optimized/img7.1.png"
       },
       priority: 20,
     },
     {
       id: 8,
       title: "PawHacks Development",
-      projectImgURL: "/img8.png",
+      projectImgURL: "/optimized/img8.png",
       popUp: {
         timeFrame: "Jan. – Mar. 2025",
         description: "The official website for PawHacks, the first student-led hackathon at Northeastern University's Oakland campus. Built collaboratively with a team of five developers, featuring a responsive front-page UI designed to drive event engagement.",
@@ -147,14 +147,14 @@ export class ProjectRaw {
           "Presented an introduction to web development to a cohort of 10+ PawHacks participants"
         ],
         tags: ["HTML", "Tailwind CSS", "JavaScript", "Astro", "Git", "VsCode"],
-        popupImgURL: "/img8.1.png"
+        popupImgURL: "/optimized/img8.1.png"
       },
       priority: 69,
     },
     {
       id: 9,
       title: "Personal Website V1",
-      projectImgURL: "/img9.png",
+      projectImgURL: "/optimized/img9.png",
       popUp: {
         timeFrame: "March 2025",
         description: "A published portfolio website showcasing programming projects in concise, engaging sections. Built with Astro as a web framework for component and service creation, with JavaScript handling DOM manipulation and Netlify providing frontend hosting.",
@@ -165,14 +165,14 @@ export class ProjectRaw {
           "Worked with frontend hosting services to minimize backend development and streamline deployment"
         ],
         tags: ["JavaScript", "CSS", "HTML", "Astro", "Netlify", "VsCode"],
-        popupImgURL: "/img9.1.png"
+        popupImgURL: "/optimized/img9.1.png"
       },
       priority: 71,
     },
     {
       id: 10,
       title: "Fitness Prediction Model",
-      projectImgURL: "/img10.png",
+      projectImgURL: "/optimized/img10.png",
       popUp: {
         timeFrame: "December 2024",
         description: "A machine learning model that predicts fitness scores on a 0–21 scale using a random forest regressor trained on a 500k-record dataset. The model analyzes factors like activity and sleep to assess physical health, achieving a mean absolute error of 2.6.",
@@ -184,14 +184,14 @@ export class ProjectRaw {
           "Achieved a mean absolute error of 2.6 in predicting fitness scores, visualizing implementation in Jupyter notebook"
         ],
         tags: ["Python", "Scikit-learn", "NumPy", "Pandas", "VsCode"],
-        popupImgURL: "/img10.1.png"
+        popupImgURL: "/optimized/img10.1.png"
       },
       priority: 79,
     },
     {
       id: 11,
       title: "Climate Resilience Hackathon (EcoVision)",
-      projectImgURL: "/img11.png",
+      projectImgURL: "/optimized/img11.png",
       popUp: {
         timeFrame: "October 2024",
         description: "A platform that translates geographic data into actionable climate risk insights via a PyTorch neural network. The project earned 2nd place out of 12 teams in the week-long NEU Climate Resilience Hackathon.",
@@ -203,14 +203,14 @@ export class ProjectRaw {
           "Managed GitHub collaboration across multiple branches, conducting code reviews and resolving merge conflicts"
         ],
         tags: ["Python", "Tailwind CSS", "Flask", "SQLite", "HTML", "JavaScript", "Git", "VsCode"],
-        popupImgURL: "/img11.1.png"
+        popupImgURL: "/optimized/img11.1.png"
       },
       priority: 81
     },
     {
       id: 12,
       title: "Red-Black Tree",
-      projectImgURL: "/img12.png",
+      projectImgURL: "/optimized/img12.png",
       popUp: {
         timeFrame: "May 2024",
         description: "A Red-Black Tree data structure implementation optimized for dynamic data sets, featuring a command-line interface for file input and storage with visualization, searching, insertion, and deletion capabilities.",
@@ -220,7 +220,7 @@ export class ProjectRaw {
           "Implemented a command-line interface using pointers and c-strings, enabling the input and storage of files; included visualization, searching, insertion, and deletion capabilities"
         ],
         tags: ["C++ Language", "VsCode"],
-        popupImgURL: "/img12.1.png"
+        popupImgURL: "/optimized/img12.1.png"
       },
       priority: 30
     }
