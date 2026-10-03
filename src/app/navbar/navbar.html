@@ -11,7 +11,7 @@
         </div>
       </div>
       <!--RightNav-->
-      <div class="hidden md:flex text-xl justify-end items-center space-x-15">
+      <div class="hidden lg:flex text-xl justify-end items-center space-x-15">
         <a class="hover:text-blue-300" href="#career">Career</a>
         <a class="hover:text-blue-300" href="#projects">Projects</a>
         <a class="hover:text-blue-300" href="#synopsis">About Me</a>
@@ -21,7 +21,7 @@
 
 
       <!---MobileMenuButton-->
-      <div class="md:hidden flex items-center">
+      <div class="lg:hidden flex items-center">
         <button (click)="toggleMenu()">
           @if(!isOpen()) {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
@@ -37,7 +37,7 @@
     </div>
   </div>
   <!---MobileMenu-->
-  <div class="w-full md:hidden fixed bg-good-black/90 text-md px-6 pb-2 text-blue-400" [class.hidden] = "!isOpen()">
+  <div class="w-full lg:hidden fixed bg-good-black/90 text-md px-6 pb-2 text-blue-400" [class.hidden] = "!isOpen()">
     <a class="block px-3 py-2 hover:text-blue-300" href="#career">Career</a>
     <a class="block px-3 py-2 hover:text-blue-300" href="#projects">Projects</a>
     <a class="block px-3 py-2 hover:text-blue-300" href="#synopsis">About Me</a>
