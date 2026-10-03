@@ -17,15 +17,12 @@
     <div class="track">
       @for (entry of entries; track entry.id) {
         <div class="node-col" [style.--i]="$index">
-          <button
+         <button
             class="node-btn"
             [attr.aria-expanded]="openId() === entry.id"
             (click)="toggle(entry.id)"
           >
             <span class="node-circle">
-              @if (entry.current) {
-                <span class="ping"><span class="wave"></span><span class="dot"></span></span>
-              }
               @if (entry.logoIcon) {
                 <ng-icon [name]="entry.logoIcon" size="1.9rem" class="node-logo"></ng-icon>
               } @else if (entry.logoSrc) {
@@ -38,7 +35,10 @@
               <div class="node-company">{{ entry.company }}</div>
               <div class="node-role">{{ entry.role }}</div>
               @if (entry.current) {
-                <div class="live-tag"><span>●</span> Currently here</div>
+                <div class="date-tag active-date"><span>●</span>{{entry.dates}}</div>
+              }
+              @else {
+                <div class = "date-tag">{{entry.dates}}</div>
               }
             </span>
           </button>
@@ -57,7 +57,7 @@
         </div>
       }
 
-      <p class="journey">the journey continues&hellip;</p>
+      <p class="journey">.next()</p>
     </div>
   </div>
 </div>

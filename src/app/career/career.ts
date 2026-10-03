@@ -43,6 +43,7 @@ export class Career implements AfterViewInit, OnDestroy {
       bullets: [
         'When I joined Sandbox, I had no idea how to properly implement or manage scalable applications. Now, I\'m leading our top-project\'s onboarding and mentoring programs.'
       ],
+      logoSrc: '/sbox.svg',
       current: false,
     },
     {

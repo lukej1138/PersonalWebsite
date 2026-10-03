@@ -38,11 +38,10 @@
    centering the track also centers whichever node sits between them. */
 .journey {
   width: 15rem;
-  padding-top: calc(2.5rem + 38px - 0.65em);
+  padding-top: 1.5rem;
   font-size: 1.1rem;
   font-style: italic;
   color: oklch(0.93 0.005 285 / 72%);
-  letter-spacing: 0.01em;
 }
 
 .node-col {
@@ -66,9 +65,10 @@
   position: relative;
   width: 4.75rem;
   height: 4.75rem;
-  border-radius: 9999px;
+  border-radius: 15px;
   background: var(--color-card);
   border: 1px solid rgba(96, 165, 250, 0.35);
+  box-shadow: 0 0 14px rgba(96, 165, 250, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +79,6 @@
 .node-btn:hover .node-circle,
 .node-btn[aria-expanded='true'] .node-circle {
   border-color: rgba(96, 165, 250, 0.65);
-  box-shadow: 0 0 24px rgba(96, 165, 250, 0.28);
 }
 
 .node-btn:active .node-circle {
@@ -147,17 +146,14 @@
 .node-company {
   font-weight: 500;
   font-size: 1.05rem;
-  color: var(--color-main-text);
+  color: #93c5fd;
 }
 .node-role {
   font-size: 0.875rem;
   color: oklch(0.93 0.005 285 / 72%);
 }
-.node-btn:hover .node-company {
-  color: #93c5fd;
-}
 
-.live-tag {
+.date-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -165,6 +161,10 @@
   font-size: 0.7rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: oklch(0.93 0.005 285 / 72%);
+}
+
+.active-date {
   color: #4ade80;
 }
 
@@ -185,6 +185,8 @@
 }
 .detail > .detail-inner {
   overflow: hidden;
+  border-radius: 0.9rem;
+  box-shadow: 0 0 24px rgba(96, 165, 250, 0.28);
 }
 
 .detail-card {
@@ -259,10 +261,9 @@
     margin-top: 0.8rem;
   }
   .journey {
-    width: auto;
+    width: 100%;
     padding-top: 0;
-    margin-top: 0.5rem;
-    margin-left: calc(4.75rem + 0.9rem);
+    margin-left: calc(4.75rem);
   }
 }
 
