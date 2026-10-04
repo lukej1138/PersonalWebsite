@@ -25,6 +25,7 @@ export class ProjectInfo implements OnInit {
 
   openPopUp(): void {
     this.popUp.open(ProjectInfoPopup, {
+      panelClass: 'dialog',
       width: '70vw',
       maxWidth: '70vw',
       height: '87vh',

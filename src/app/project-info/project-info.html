@@ -1,4 +1,4 @@
-<div (click) = "openPopUp()" class="cursor-pointer rounded-3xl bg-card hover:shadow-[0px_0px_40px] transition duration-200 shadow-[0px_0px_35px] shadow-blue-500 hover:shadow-blue-400 p-10 pb-5 max-w-md space-y-5">
+<div (click) = "openPopUp()" class="cursor-pointer rounded-xl bg-card transition duration-200 border border-blue-400 hover:shadow-[0px_0px_20px] hover:shadow-blue-400 shadow-[0px_0px_10px] shadow-blue-500 p-10 pb-5 max-w-md space-y-5">
   <div class="text-3xl text-blue-200 font-bold">{{ sectionData.title }}</div>
   <img class="w-fit rounded-xl" src="{{sectionData.projectImgURL}}" alt="Front-Facing Photo For Given Project">
   <div class= "flex flex-wrap gap-2 text-blue-300/100 *:border-blue-300/20 *:p-[8px]">
@@ -6,5 +6,4 @@
       <div class="border-1 w-fit rounded-3xl">{{tech}}</div>
     }
   </div>
-
 </div>

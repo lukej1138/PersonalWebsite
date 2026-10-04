@@ -22,7 +22,7 @@
             [attr.aria-expanded]="openId() === entry.id"
             (click)="toggle(entry.id)"
           >
-            <span class="node-circle">
+            <span class="node-circle border border-blue-400 hover:shadow-blue-400 hover:shadow-[0px_0px_10px]">
               @if (entry.logoIcon) {
                 <ng-icon [name]="entry.logoIcon" size="1.9rem" class="node-logo"></ng-icon>
               } @else if (entry.logoSrc) {
