@@ -13,7 +13,7 @@ export class Hero {
   filtersConn : Filters = inject(Filters);
   pauseLoop = signal(false);
   flashCursor = signal(false);
-  typeWriterPrintableVals: string[] = ["Software Engineer", "CS + AI @ NEU", "Lossless Audio Enjoyer", "Try Clicking an Icon!"];
+  typeWriterPrintableVals: string[] = ["Try Clicking an Icon!", "Software Engineer", "CS + AI @ NEU", "Lossless Audio Enjoyer"];
   typeWriterEffect = this.getTypewriterEffect(this.typeWriterPrintableVals);
   orbitData = inject(Technologies).getData();
   spinDur = signal(60);
