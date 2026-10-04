@@ -22,7 +22,7 @@ export class Synopsis implements OnInit {
     const l = this.layout();
     const pos = this.cards.map(c => c.positions[l]);
     return {
-      w: Math.max(...pos.map(p => p.x)) + 326,
+      w: Math.max(...pos.map(p => p.x)) + (this.viewportW() < 500 ? 300 : 330),
       h: Math.max(...pos.map(p => p.y)) + 480,
     };
   });
