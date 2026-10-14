@@ -16,15 +16,14 @@ export class Projects implements AfterViewInit, OnDestroy {
 
   hideFilters = signal(true);
   thisElement = viewChild.required<ElementRef>('projects');
-  childElement = viewChild("dummy", {read: ElementRef});
   topRowCount = signal(3);
   private resizeObserver ?: ResizeObserver;
 
   ngAfterViewInit(): void {
     this.resizeObserver = new ResizeObserver(() => {
       const width = this.thisElement()?.nativeElement.clientWidth;
-      const elemWidth =  487; //487 Me when I hardcode values :p
-      this.topRowCount.set(Math.max(1, Math.floor(width / elemWidth)));
+      const elementWidth = 500; //hard-coded to info component size
+      this.topRowCount.set(Math.max(1, Math.floor(width / elementWidth)));
     })
     this.resizeObserver.observe(this.thisElement()?.nativeElement);
   }
@@ -35,7 +34,14 @@ export class Projects implements AfterViewInit, OnDestroy {
 
   isExpanded = signal(false);
   firstThree  = computed(() => this.filtersConn.filteredProjectInformation().slice(0, this.topRowCount()));
-  expanded = computed(() => this.filtersConn.filteredProjectInformation().slice(this.topRowCount()));
+  expanded = computed(() => {
+    const array = this.filtersConn.filteredProjectInformation().slice(this.topRowCount());
+    const toRet = [];
+    for (let i = 0; i < array.length; i += this.topRowCount()) {
+      toRet.push(array.slice(i, i + this.topRowCount()));
+    }
+    return toRet;
+  });
   canBeExpanded = computed(() => this.expanded().length > 0);
 
   toggleFilters() : void {

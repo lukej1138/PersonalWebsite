@@ -209,7 +209,7 @@
 
 
 /* ---------- Mobile: vertical rail ---------- */
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .track-wrap {
     justify-content: center;
   }
@@ -307,7 +307,7 @@
   transition-delay: 0.85s;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .career-pending .track::before {
     transform: scaleY(0);
   }

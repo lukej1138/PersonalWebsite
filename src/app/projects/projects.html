@@ -26,15 +26,19 @@
       }
     </div>
   </div>
-  <div #projects class="flex flex-wrap gap-20 items-start justify-center">
+  <div #projects class="flex gap-20 items-start justify-center">
     @for (project of firstThree(); track project.id) {
-      <app-project-info #dummy [infoId] = 'project.id'/>
+      <app-project-info [infoId] = 'project.id'/>
     }
   </div>
-  <div class="extra-projects py-15 px-5 -mx-5" [class.expanded] = "isExpanded()">
-    <div class="flex flex-wrap gap-20 items-start justify-center">
-      @for (project of expanded(); track project.id) {
-        <app-project-info [infoId] = 'project.id'/>
+  <div class="extra-projects" [class.expanded] = "isExpanded()">
+    <div>
+      @for (group of expanded(); track $index) {
+        <div class= "flex gap-20 items-start justify-center py-15">
+          @for (project of group; track project.id) {
+            <app-project-info [infoId] = 'project.id'/>
+          }
+        </div>
       }
     </div>
   </div>
