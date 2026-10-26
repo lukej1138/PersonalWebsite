@@ -15,7 +15,7 @@ export class Technologies {
     { id: 6,  name: 'HTML',         imgUrl: 'https://cdn.simpleicons.org/html5' },
     { id: 7,  name: 'CSS',          imgUrl: 'https://cdn.simpleicons.org/css' },
     { id: 8,  name: 'JavaScript',   imgUrl: 'https://cdn.simpleicons.org/javascript' },
-    { id: 9,  name: 'SQL',          imgUrl: 'https://cdn.simpleicons.org/sqlite' },
+    { id: 9,  name: 'SQLite',          imgUrl: 'https://cdn.simpleicons.org/sqlite' },
 
     // Technologies
     { id: 10, name: 'Next.js',      imgUrl: 'https://cdn.simpleicons.org/nextdotjs/ffffff' },
@@ -45,7 +45,6 @@ export class Technologies {
     // Missing from filter tags
     { id: 31, name: 'Swing',        imgUrl: '/swing.png' },
     { id: 32, name: 'Netlify',      imgUrl: 'https://cdn.simpleicons.org/netlify' },
-    { id: 33, name: 'SQLite',       imgUrl: 'https://cdn.simpleicons.org/sqlite' },
   ];
 
   getData(): TechInfo[] {
